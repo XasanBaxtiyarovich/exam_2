@@ -14,7 +14,7 @@ export class OrderController {
   // Create Order
   @ApiOperation({summary: 'Create order'})
   @ApiResponse({status: 200, type: Order})
-  @Post('add-admin')
+  @Post('add')
   create_order(
     @Body() createOrderDto: CreateOrderDto
   ): Promise<Object> {
@@ -24,7 +24,7 @@ export class OrderController {
   // Find All Orders 
   @ApiOperation({summary: 'Find all orders'})
   @ApiResponse({status: 200, type: [Order]})
-  @Get('find/orders')
+  @Get('find-all')
   find_orders(): Promise<Object> {
     return this.orderService.find_orders()
   };

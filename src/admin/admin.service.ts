@@ -41,7 +41,7 @@ export class AdminService {
   }
 
   async signIn(signInDto: SignInDto): Promise<Object> {
-    const [ admin ] = await this.adminRepository.findBy({ user_name: signInDto.username });
+    const [ admin ] = await this.adminRepository.findBy({ user_name: signInDto.user_name });
     
     if (!admin) return {
                           message: 'username or password is incorrect',

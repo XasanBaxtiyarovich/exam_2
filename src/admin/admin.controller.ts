@@ -13,7 +13,7 @@ export class AdminController {
   // Add Admin
   @ApiOperation({summary: 'Add admin'})
   @ApiResponse({status: 200, type: Admin})
-  @Post('add-admin')
+  @Post('add')
   add_admin(
     @Body() addAdminDto: AddAdminDto
   ): Promise<Object> {
@@ -33,7 +33,7 @@ export class AdminController {
   // Find One Admin
   @ApiOperation({summary: 'Find one admin'})
   @ApiResponse({status: 200, type: Admin})
-  @Get('find/admin/:id')
+  @Get('find/:id')
   find_one_admin(
     @Param('id') id: number
   ): Promise<Object> {
@@ -43,7 +43,7 @@ export class AdminController {
   // Find All Admins 
   @ApiOperation({summary: 'Find all admins'})
   @ApiResponse({status: 200, type: [Admin]})
-  @Get('find-all/admins')
+  @Get('find-all')
   find_admins(): Promise<Object> {
     return this.adminService.find_admins()
   };
@@ -51,7 +51,7 @@ export class AdminController {
   // Searche One Admin
   @ApiOperation({summary: 'Searche admin'})
   @ApiResponse({status: 200, type: Admin})
-  @Get('searche/admin/:name')
+  @Get('searche/:name')
   searche_admin(
     @Param('name') name: string
   ): Promise<Object> {
